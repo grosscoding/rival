@@ -27,4 +27,26 @@ export interface User {
 	status: string;
 }
 
+export type Players = Player[]
+
+export interface Player{
+	id: number,
+	name: string,
+	points: number
+}
+
+export type Teams = Team[]
+export interface Team{
+	id: number,
+	players: Player[]
+}
+
+export type Matches = Match[]
+
+export interface Match{
+	id: number,
+	teams: Team[],
+	winner_team_id: number
+}
+
 export type PlaygroundAction = (typeof playgroundActions)[number];
